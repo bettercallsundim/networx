@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
-    "dev": "nodemon ."
+    "devs": "nodemon .",
+    "dev": "bun --watch ."
   },
   "keywords": [],
   "author": "",
