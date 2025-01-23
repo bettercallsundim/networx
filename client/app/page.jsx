@@ -22,19 +22,20 @@ export default function page() {
       <div className="">
         <p className="md:text-[50px] text-[30px]  text-primary leading-[3rem] md:leading-[5rem]">
           <span className="bg-primary text-text px-2 border-t-4 border-text">
-            Democratic <br className="md:hidden" />
+            Next Gen. <br className="md:hidden" />
           </span>{" "}
           Social network
           <br />{" "}
-          <span className=" text-gray-500 text-[25px] md:text-[50px] px-2 border-text">
-            {" "}
-            ... wait that exists ?
-          </span>
-          <img
+          <div>
+            <p className=" text-gray-500 text-[25px] md:text-[30px] px-2 border-text">
+              Share your thoughts, across the generation
+            </p>
+          </div>
+          {/* <img
             className="w-[150px] mx-auto mt-12 md:mt-0  rounded md:float-end"
             src="https://media1.tenor.com/m/TzaUHHp9un4AAAAd/huh-cat-roblox-huh.gif"
             alt=""
-          />
+          /> */}
         </p>
         <p className="text-center"></p>
       </div>

@@ -7,8 +7,8 @@ import "./globals.css";
 import "./index.css";
 
 export const metadata = {
-  title: "8TP4TP",
-  description: "Democratic social network",
+  title: "Networx",
+  description: "Next Gen Social Network",
 };
 
 export default function RootLayout({ children }) {
@@ -18,12 +18,11 @@ export default function RootLayout({ children }) {
         <html className="roothtml" lang="en">
           <body className="poppins">
             <SocketProvider>
-            <ThemeProvider>
-              <Nav />
-              {children}
-            </ThemeProvider>
+              <ThemeProvider>
+                <Nav />
+                {children}
+              </ThemeProvider>
             </SocketProvider>
-
           </body>
         </html>
       </OauthProvider>

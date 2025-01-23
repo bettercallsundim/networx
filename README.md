@@ -1,6 +1,6 @@
-# 8TP4TP : By The !People, For The People
+# Networx
 
-Democratic social network platform.
+Next Gen Social Network
 
 ## Features
 
