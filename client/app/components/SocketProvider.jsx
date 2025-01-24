@@ -159,7 +159,7 @@ const SocketProvider = ({ children }) => {
         authorization: `Bearer ${token}`,
       },
     },
-    fetchPolicy: "no-cache",
+    fetchPolicy: "network-only",
   });
 
   useEffect(() => {
@@ -168,6 +168,7 @@ const SocketProvider = ({ children }) => {
         variables: {
           _id: user?._id,
         },
+        fetchPolicy: "network-only",
       });
     }
   }, [user]);
@@ -182,7 +183,7 @@ const SocketProvider = ({ children }) => {
       let friends = { ...friendsConvo };
 
       getConversationsArr.forEach((convo) => {
-        if (convo.user1._id === user._id) {
+        if (convo.user1._id === user?._id) {
           friends[convo.user2._id] = {
             ...convo.user2,
             lastMessage: convo.lastMessage,
@@ -212,12 +213,12 @@ const SocketProvider = ({ children }) => {
       });
       setFriendsConvo(friends);
     }
-  }, [getConversationsArr]);
+  }, [getConversationsArr, user]);
 
   useEffect(() => {
     setFriendsConvoList(Object.keys(friendsConvo));
     dispatch(setFriendsConvoRedux({ friendsConvo: { ...friendsConvo } }));
-  }, [friendsConvo]);
+  }, [friendsConvo, user]);
 
   //get convo after selecting id
 
@@ -282,7 +283,7 @@ const SocketProvider = ({ children }) => {
         authorization: `Bearer ${token}`,
       },
     },
-    fetchPolicy: "no-cache",
+    fetchPolicy: "network-only",
   });
   useEffect(() => {
     if (conversationId) {
@@ -377,7 +378,7 @@ const SocketProvider = ({ children }) => {
         }
       });
     setFriendsConvo(tempConvo);
-  }, [onlineUsers]);
+  }, [onlineUsers, user]);
   useEffect(() => {
     console.log("friendsconvo", friendsConvo);
   }, [friendsConvo]);
@@ -398,7 +399,7 @@ const SocketProvider = ({ children }) => {
       });
       setUpdateNeed(null);
     }
-  }, [updateNeed]);
+  }, [updateNeed, user]);
   useEffect(() => {
     if (updateNeedSent) {
       friendsConvoList.forEach((friendId) => {
@@ -416,7 +417,7 @@ const SocketProvider = ({ children }) => {
       });
       setUpdateNeedSent(null);
     }
-  }, [updateNeedSent]);
+  }, [updateNeedSent, user]);
   return (
     <SocketContext.Provider
       value={{

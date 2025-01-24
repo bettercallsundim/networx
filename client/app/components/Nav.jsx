@@ -62,7 +62,7 @@ function Nav() {
     dispatch(logOut());
     removeDataFromLocal("token");
     removeDataFromLocal("user");
-    router.push("/");
+    window.location.href = process.env.NEXT_PUBLIC_FRONTEND;
   };
 
   const dispatch = useDispatch();
